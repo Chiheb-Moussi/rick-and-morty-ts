@@ -1,4 +1,5 @@
 import renderCharacters from "../builders/renderCharacters";
+import renderPAgination from "../builders/renderPagination";
 import { Character } from "../models/Character";
 
 export type Info = {
@@ -17,7 +18,7 @@ const fetchCharacters = async(name: string="", page: string=""): Promise<void> =
     const response = await fetch(url);
     const data: DataResponse = await response.json();
     renderCharacters(data.results);
-    renderPagination(data.info, name, page);
+    renderPAgination(data.info, name, page);
 
 }
 
