@@ -33,7 +33,7 @@ export default renderPAgination;
 const displayPageNumbers = ( currentPage: number, pageCount: number, name:string="" ): string => {
     let pageNumbers = [];
     if(pageCount < 5) {
-        return Array(5).fill('').map((_, index)=>{
+        return Array(pageCount).fill('').map((_, index)=>{
             return PaginatorButton({
                 name,
                 page: (index+1).toString(),
